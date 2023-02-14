@@ -69,6 +69,15 @@ with open(filename, "r") as file:
         times.append(executed_time)
         i = i + 1
     
-print("Timing for each array in ex2.json: ", times)
+# xy graph
+#exe2.2 is the graph for testing the times without change in func2
+
+x = list(range(1,11))
+plt.plot(x,times)
+plt.title("Times with arrays in ex2.json")
+plt.xlabel("n")
+plt.ylabel("time (s)")
+plt.show()
+
 file.close()
 

@@ -104,5 +104,24 @@ with open(filename_w, "r") as file_op:
 print("Timing for each array in ex2.json: ", times)
 print("Timing for each altered arrays: ", times_op)
 
+#xy graph
+#exe2.4 is the graph with changes to func2
+#exe2.5 is the graph with changes with the inputs 
+x = list(range(1,11))
+
+fig, ax = plt.subplots()
+
+line1,  = ax.plot(x, times, label = "Changes in func2") # exe2.2
+ax.set_xlabel("n")
+ax.set_ylabel("time (s)")
+
+line2, = ax.plot(x, times_op, label = "Changes in Inputs") # exe2.2
+ax.set_title("Times of Arrays with Changes in Inputs/func2")
+ax.set_xlabel("n")
+ax.set_ylabel("time (s)")
+
+ax.legend(handles=[line1, line2])
+plt.show()
+
 file.close()
 file_op.close()
